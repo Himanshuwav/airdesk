@@ -1,0 +1,28 @@
+{
+  "face_photo": "",
+  "camera_index": 0,
+  "frame_width": 960,
+  "frame_height": 540,
+  "face_check_every_n_frames": 10,
+  "face_grace_seconds": 4.0,
+  "face_tolerance": 0.5,
+  "face_scale": 0.5,
+  "hand_model_complexity": 1,
+  "min_detection_confidence": 0.7,
+  "min_tracking_confidence": 0.6,
+  "cursor_smoothing": 0.35,
+  "cursor_margin": 0.15,
+  "cooldown_seconds": 0.9,
+  "hold_seconds": {"pinch": 0.08, "fist": 0.5, "open_palm": 0.5},
+  "swipe_distance": 0.2,
+  "swipe_window_seconds": 0.4,
+  "swipe_return_block_seconds": 1.2,
+  "swap_swipe_directions": false,
+  "preview_width": 640,
+  "tuning": {
+    "extended_ratio": 1.12,
+    "pinch_ratio": 0.30,
+    "pinch_min_reach": 0.45,
+    "pre_pinch_freeze": 1.6
+  }
+}

@@ -1,0 +1,24 @@
+# AirDesk dependencies (Python 3.12, macOS arm64). Install INSIDE the project venv:
+#   .venv/bin/pip install -r requirements.txt
+#   .venv/bin/pip install --no-deps face_recognition==1.3.0
+# (setup.sh runs both steps.)
+#
+# Why face_recognition is installed separately: its metadata depends on "dlib",
+# which pip builds from source with cmake. On this Mac (current macOS SDK) that
+# build fails in dlib's bundled libpng ("fp.h file not found"). dlib-bin is the
+# same dlib library as a prebuilt wheel, so face_recognition goes on top of it
+# with --no-deps.
+#
+# OpenCV: mediapipe pulls in opencv-contrib-python, which provides `cv2`
+# (a superset of opencv-python). Do not also install opencv-python; both
+# packages write the same cv2 module and break each other.
+
+mediapipe==0.10.21          # last release with the mp.solutions.hands API
+pyautogui==0.9.54           # also installs pyobjc Quartz, used for key combos
+pyobjc-framework-AVFoundation==13.0  # asks macOS for camera access and waits for the answer
+dlib-bin==20.0.1.post1      # prebuilt dlib for face_recognition
+face_recognition_models==0.3.0
+Click>=6.0
+Pillow
+numpy<2                     # mediapipe 0.10.21 is built against numpy 1.x
+setuptools<81               # face_recognition_models imports pkg_resources
